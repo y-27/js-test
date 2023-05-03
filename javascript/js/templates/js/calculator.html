@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator{
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.calculator form input{
+    border: 0;
+    outline: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background: transparent;
+    font-size: 30px;
+    color: rgb(214, 181, 16);
+    margin: 10px;
+}
+#display {
+    width: 300px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+}
+</style>
+<body>
+    <div class="container">
+        <div class="calculator">
+           <form action="">
+
+            <div>
+                <input type="text" id="display" width="100px" height="60px">
+            </div>
+
+        
+    <div>
+        <input type="button" value="%" onclick="show('%')">
+        <input type="button" value="Dlt" onclick="back()">
+        <input type="button" value="C" onclick="Clear()">
+        <input type="button" value="+" onclick="opr('+')">
+    </div>
+        <br />
+    <div>   
+        <input type="button" value="9" onclick="show(9)">
+        <input type="button" value="8" onclick="show(8)">
+        <input type="button" value="7" onclick="show(7)">
+        <input type="button" value="-" onclick="show('-')">
+    </div> 
+        <br />  
+    <div> 
+        <input type="button" value="6" onclick="show(6)">
+        <input type="button" value="5" onclick="show(5)">
+        <input type="button" value="4" onclick="show(4)">
+        <input type="button" value="*" onclick="show('*')">
+    </div>    
+        <br />
+    <div>    
+        <input type="button" value="3" onclick="show(7)">
+        <input type="button" value="2" onclick="show(8)">
+        <input type="button" value="1" onclick="show(9)">
+        <input type="button" value="/" onclick="show('/')">
+    </div>    
+        <br />
+     <div>    
+        <input type="button" value="0" onclick="show(0)">
+        <input type="button" value="00" onclick="show('00')">
+        <input type="button" value="." onclick="show('.')">
+        <input type="button" value="=" onclick="display.value=eval(display.value)">
+     </div>
+
+
+       </form>  
+    </div> 
+    </div>
+
+
+       <script>
+        var answer = document.getElementById("display")
+           function show (a) {
+            answer.value += a
+           }
+
+           function clear(){
+            answer.value=""
+           }
+
+           function opr(){
+            answer.value =b
+
+           }
+           function back(){
+            answer.value = answer.value.slice(0,-1);
+           }
+       </script>
+</body>
+</html>
